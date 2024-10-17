@@ -1,5 +1,5 @@
-from app.aes import generate_key_ciphertext, decrypt_message
-from app.rsa import encryp_message_using_public_pem, decrypt_message_using_private_pem
+from aes import generate_key_ciphertext, decrypt_message
+from rsa import encryp_message_using_public_pem, decrypt_message_using_private_pem
 
 if __name__ == "__main__":
     # Cliente generar una clave AES aleatoria
@@ -13,8 +13,8 @@ if __name__ == "__main__":
     # Cliente Utilizar la clave RSA publica del servidor para cifrar el mesaje de nuevo
     rsa_encrypted_aes_key = encryp_message_using_public_pem(cipher_key)
     rsa_encrypted_message = encryp_message_using_public_pem(cipher_text)
-    print("Encrypted aes key:", rsa_encrypted_aes_key)
-    print("Encrypted aes message:", rsa_encrypted_message)
+    print("Encrypted aes key with rsa:", rsa_encrypted_aes_key)
+    print("Encrypted aes message with rsa:", rsa_encrypted_message)
 
     # ---------------------------------------------------------------------------
 
